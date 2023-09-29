@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const session = require('express-session');
+const events = require('./events/routes');
 const app = express();
 
 
@@ -25,5 +26,11 @@ app.use(express.json({
 app.get('/', (req, res) => {
   res.json({ messge: 'server started' });
 });
+
+/* ---------------
+ * EVENTS ROUTES
+ * --------------- */
+// Gets all events
+app.get('/events', events.getAllEvents);
 
 module.exports = app;
