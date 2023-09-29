@@ -1,16 +1,13 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-underscore-dangle */
-const { MongoClient } = require('mongodb');
-const { DATABASE_URL } = require('./config');
+const { MongoClient } = require("mongodb");
+const { DATABASE_URL } = require("./config");
 
 let MongoConnection;
 const connect = async () => {
   try {
-    MongoConnection = (await MongoClient.connect(
-      DATABASE_URL,
-      { useNewUrlParser: true, useUnifiedTopology: true },
-    ));
+    MongoConnection = await MongoClient.connect(DATABASE_URL);
     return MongoConnection;
   } catch (err) {
     return err;
@@ -31,11 +28,9 @@ const closeMongoDBConnection = async () => {
 const deleteOrderChatMessage = async (orderId) => {
   try {
     const db = await getDB();
-    const data = await db.collection('OrderChatMessages').deleteOne(
-      {
-        order_id: parseInt(orderId, 10),
-      },
-    );
+    const data = await db.collection("OrderChatMessages").deleteOne({
+      order_id: parseInt(orderId, 10),
+    });
     return JSON.stringify(data);
   } catch (err) {
     return err;
@@ -45,11 +40,9 @@ const deleteOrderChatMessage = async (orderId) => {
 const deletePastOrder = async (orderId) => {
   try {
     const db = await getDB();
-    const data = await db.collection('PastOrders').deleteOne(
-      {
-        _id: parseInt(orderId, 10),
-      },
-    );
+    const data = await db.collection("PastOrders").deleteOne({
+      _id: parseInt(orderId, 10),
+    });
     return JSON.stringify(data);
   } catch (err) {
     return err;
