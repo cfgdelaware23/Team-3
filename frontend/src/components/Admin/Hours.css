@@ -1,0 +1,35 @@
+/* Style for HoursTable component */
+.table__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+    
+  }
+  
+  table {
+    width: 90%; /* Make the table wider, adjust as needed */
+    max-width: 700px; /* Limit the maximum width of the table */
+    border-collapse: collapse;
+    font-family: Arial, sans-serif; /* Change the font family as needed */
+    font-size: 16px; /* Change the font size as needed */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 350px;
+    margin-bottom: 300px;
+  }
+  
+  thead {
+    background-color: #f2f2f2; /* Background color for table header */
+  }
+  
+  th, td {
+    padding: 10px; /* Add padding to table cells */
+    border: 1px solid #ddd; /* Add borders to table cells */
+    text-align: left; /* Align text to the left */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2; /* Alternate row background color */
+  }
+  
