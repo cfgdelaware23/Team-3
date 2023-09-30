@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.png'
-import './components/Host.css'
+import './Host.css'
 
 
 const Card = () => {
