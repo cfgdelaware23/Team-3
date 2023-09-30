@@ -80,7 +80,7 @@ const Host = () => {
 
            
 
-             <section class="section">
+             <section class="section-title">
                  <h1> My Upcoming Events</h1>
 
 
@@ -99,7 +99,7 @@ const Host = () => {
             </section>
 
 
-             <section class="section">
+             <section class="section-title">
 
                  <h1> Other Events</h1>
              </section>
