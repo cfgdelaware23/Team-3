@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Volunteer from './Volunteer.js'
+import Host from './Host'
 
 function App() {
   return (
     <div className="App">
-      <Volunteer/>
+      <Host/>  
     </div>
   );
 }
