@@ -17,6 +17,7 @@ function SignUp() {
     eventsAttending,
     attendingThisWeek,
     upcomingEvents,
+    events: [{}],
   };
 
   // method: 'POST',          // HTTP request method

@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router";
 
 function ConfirmationPage() {
   const [pageData, setPageData] = useState(null);
+  const [updatedUser, setUpdatedUSer] = useState(null);
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigate = useNavigate();
 
@@ -18,8 +20,19 @@ function ConfirmationPage() {
     console.log("data on page:", data.result);
   };
 
+  const fetchUpdatedUser = async () => {
+    const id = user._id;
+    const res = await fetch(`http://localhost:3001/users/${id}`);
+    const data = await res.json();
+
+    console.log("UPDATED USER via con: ", data);
+
+    localStorage.clear();
+    localStorage.setItem("currentUser", JSON.stringify(data));
+    console.log(localStorage.getItem("currentUser"));
+  };
+
   const addToEventsList = async () => {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
     const eventData = {
       pageData,
       user,
@@ -33,7 +46,8 @@ function ConfirmationPage() {
       }, // Headers for the request
       body: JSON.stringify(eventData), // Convert the data to a JSON string
     });
-    const data = await res.json();
+
+    fetchUpdatedUser();
   };
 
   useEffect(() => {
@@ -53,12 +67,16 @@ function ConfirmationPage() {
             <buton
               onClick={() => {
                 addToEventsList();
+                alert("Added Succesfully, click OK to redirect");
+                navigate("/");
               }}
             >
               Yes
             </buton>
             <buton
               onClick={() => {
+                alert("Canceled, click Ok to redirect");
+
                 navigate("/");
               }}
             >

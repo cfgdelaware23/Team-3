@@ -5,30 +5,35 @@ import { useNavigate, useHistory } from "react-router-dom";
 
 const Nav = () => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  let currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const navigate = useNavigate();
   console.log(currentUser);
 
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("currentUser"))) {
+      // currentUser = JSON.parse(localStorage.getItem("currentUser"));
       setLoggedIn(true);
     }
   });
   return (
-    
     <div className="navbar">
       <img src={logo} alt="ACB Logo" className="logo" />
       <div className="right__side">
         <ul className="nav__tabs" role="tablist">
           {loggedIn ? (
-            <div>
+            <div className="right__side">
+              <Link className="nav__contact" to="/profile">
+                Profile
+              </Link>
               <button
                 className="nav__contact"
                 onClick={() => {
                   localStorage.clear();
+                  navigate("/");
                   window.location.reload();
                 }}
-                role="tab">
+                role="tab"
+              >
                 Log Out
               </button>
             </div>
@@ -43,7 +48,8 @@ const Nav = () => {
                 onClick={() => {
                   localStorage.clear();
                 }}
-                role="tab">
+                role="tab"
+              >
                 Sign Up
               </Link>
             </div>
