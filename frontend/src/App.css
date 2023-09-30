@@ -24,6 +24,23 @@
   background-color: #0056b3;
 }
 
+.introNavButton{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Login and Signup */
+.nav_button{
+  margin: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: #362A7C;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: lightgray;
+  text-decoration: none;
+  font-size: 18px;
+  /* text */
+}
 /* Organization CSS */
 .org-card {
   border: 1px solid #ccc;
@@ -77,4 +94,31 @@
 
 .skip-link:focus {
   top: 0;
+}
+
+.nav__contact{
+  margin: 10px;
+  padding: 5px 10px 5px 10px;
+  background-color: #362A7C;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: lightgray;
+  text-decoration: none;
+  font-size: 18px;
+  
+
+}
+
+
+
+@media (max-width: 768px) {
+    .introNavButton{
+      display: flex;
+      flex-direction: column;
+    }
+        .nav_button{
+        font-size: 18px;
+        }
+        
+  
 }
