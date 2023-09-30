@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const userData = {
     email,
@@ -30,6 +32,7 @@ function LoginForm() {
     localStorage.setItem("currentUser", JSON.stringify(data.findByEmail));
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     console.log("Current user: ", currentUser);
+    navigate("/");
 
     // You can perform further actions here, like sending the data to a server.
   };

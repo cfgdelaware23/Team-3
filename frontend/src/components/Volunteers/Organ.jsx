@@ -22,7 +22,7 @@ function Organ({ org }) {
 
       <li className="nav__contact--new">
         <Link
-          className="nav__contact"
+          className="nav__contact main-button-for-events"
           to={
             JSON.parse(localStorage.getItem("currentUser")) === null
               ? "/sign-up"

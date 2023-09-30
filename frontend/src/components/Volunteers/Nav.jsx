@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./acblogo.png";
+import { useNavigate, useHistory } from "react-router-dom";
 
 const Nav = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
   console.log(currentUser);
 
   useEffect(() => {
@@ -13,30 +15,26 @@ const Nav = () => {
     }
   });
   return (
+    
     <div className="navbar">
       <img src={logo} alt="ACB Logo" className="logo" />
       <div className="right__side">
-        <ul className="nav__tabs">
+        <ul className="nav__tabs" role="tablist">
           {loggedIn ? (
             <div>
               <button
                 className="nav__contact"
                 onClick={() => {
                   localStorage.clear();
+                  window.location.reload();
                 }}
-              >
+                role="tab">
                 Log Out
               </button>
             </div>
           ) : (
             <div>
-              <Link
-                to="/login"
-                className="nav__contact"
-                onClick={() => {
-                  localStorage.clear();
-                }}
-              >
+              <Link to="/login" className="nav__contact" role="tab">
                 Login
               </Link>
               <Link
@@ -45,7 +43,7 @@ const Nav = () => {
                 onClick={() => {
                   localStorage.clear();
                 }}
-              >
+                role="tab">
                 Sign Up
               </Link>
             </div>
