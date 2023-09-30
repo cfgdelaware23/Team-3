@@ -7,7 +7,7 @@ function Organ({ name, description }) {
       <h3>{name}</h3>
       <p>{description}</p>
       <li className="nav__contact--new">
-        <a href="#" className="nav__contact--textnew">
+        <a href="#" className="nav__contact--textnew main-button-for-events" aria-label="Attend Event">
           Attend Event
         </a>
       </li>
