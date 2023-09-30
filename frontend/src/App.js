@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Volunteers from './components/Volunteers';
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <Volunteers/>
-    </div>
+   <>
+   <Login/>
+   </>
   );
 }
 
