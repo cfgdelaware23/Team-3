@@ -1,26 +1,33 @@
-const { getDB } = require('../database');
-const { ObjectId } = require('mongodb');
+const { getDB } = require("../database");
+const { ObjectId } = require("mongodb");
 
 const getAllEvents = async () => {
   try {
     const db = await getDB();
-    const result = await db.collection('Events').find({ }).toArray();
+    const result = await db.collection("Events").find({}).toArray();
     return result;
   } catch (err) {
     return err;
   }
 };
 
-const createEvent = async (title, date, description, zoom, owner, categories) => {
+const createEvent = async (
+  title,
+  date,
+  description,
+  zoom,
+  owner,
+  categories
+) => {
   try {
     const db = await getDB();
-    const result = await db.collection('Events').insertOne({
+    const result = await db.collection("Events").insertOne({
       title,
       date,
       description,
       zoom,
       owner,
-      categories
+      categories,
     });
     return result?.insertedId;
   } catch (err) {
@@ -31,14 +38,15 @@ const createEvent = async (title, date, description, zoom, owner, categories) =>
 const editEvent = async (id, type, to) => {
   try {
     const db = await getDB();
-    const result = await db.collection('Events').updateMany({
-      _id: new ObjectId(id)
-    },
-    {
-      $set: {
-        [type] : to,
+    const result = await db.collection("Events").updateMany(
+      {
+        _id: new ObjectId(id),
+      },
+      {
+        $set: {
+          [type]: to,
+        },
       }
-    }
     );
     return result?.insertedId;
   } catch (err) {
@@ -49,7 +57,9 @@ const editEvent = async (id, type, to) => {
 const cancelEvent = async (id) => {
   try {
     const db = await getDB();
-    const result = await db.collection('Events').deleteOne({_id: new ObjectId(id)});
+    const result = await db
+      .collection("Events")
+      .deleteOne({ _id: new ObjectId(id) });
     return result?.insertedId;
   } catch (err) {
     return err;

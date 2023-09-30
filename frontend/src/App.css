@@ -1,0 +1,66 @@
+/* Navbar CSS DOUBLE CHECK LOGIN */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background-color: lightgrey;
+}
+
+.logo {
+  height: 50px;
+}
+
+.login-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Organization CSS */
+.org-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.org-card h3 {
+  margin-top: 0;
+}
+
+.org-container{
+  display: flex;
+  flex-direction: row;
+}
+
+
+/* footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: lightgrey;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer a {
+  margin: 0 10px;
+  color: black;
+  text-decoration: none;
+  font-size: 24px;
+}
+
