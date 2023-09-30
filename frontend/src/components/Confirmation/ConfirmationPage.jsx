@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
+import './ConfirmationPage.css';
 
 function ConfirmationPage() {
   const [pageData, setPageData] = useState(null);
@@ -27,11 +28,11 @@ function ConfirmationPage() {
     console.log("adding from client. data:", eventData);
 
     const res = await fetch("http://localhost:3001/users/add-event", {
-      method: "POST", // HTTP request method
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-      }, // Headers for the request
-      body: JSON.stringify(eventData), // Convert the data to a JSON string
+      },
+      body: JSON.stringify(eventData),
     });
     const data = await res.json();
   };
@@ -41,35 +42,37 @@ function ConfirmationPage() {
   }, []);
 
   return (
-    <>
+    <div className="container">
       {pageData ? (
-        <div>
-          <h1>Event Title:{pageData.title}</h1>
-          <h1>Description: {pageData.description}</h1>
-          <h1>Categories: {pageData.categories}</h1>
-          <h1>Date: {pageData.date}</h1>
-          Do you want you attend this event? blah blah blah
-          <div>
-            <buton
+        <>
+          <h1 className="title">Event Title: {pageData.title}</h1>
+          <p className="description">Description: {pageData.description}</p>
+          <p className="category">Category: {pageData.categories}</p>
+          <p className="date">Date: {pageData.date}</p>
+          <p className="question">Do you want to attend this event?</p>
+          <div className="buttons">
+            <button
+              className="yes"
               onClick={() => {
                 addToEventsList();
               }}
             >
               Yes
-            </buton>
-            <buton
+            </button>
+            <button
+              className="no"
               onClick={() => {
                 navigate("/");
               }}
             >
               No
-            </buton>
+            </button>
           </div>
-        </div>
+        </>
       ) : (
         <div>Loading....</div>
       )}
-    </>
+    </div>
   );
 }
 
