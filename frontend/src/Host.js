@@ -20,26 +20,12 @@ const Card = () => {
     );
   }
 
-  const toggleDarkMode = () => {
-    document.body.classList.toggle("dark-mode");
-  }
+  let themeButton = document.getElementById("theme-button");
 
-const Access = () => {
-    return (
-        <div className="box">
-       <h3>constant</h3>
-       <h3>options:</h3>
-       <button id="theme-button">Toggle Dark Mode</button>
-       
-       <h3>Text Size:</h3>
- 
-        </div>
-        
-  
-    );
-        
-    
+const DarkMode = () => {
+  document.body.classList.toggle("dark-mode");
 }
+
 
 function Footer() {
     return (
@@ -75,6 +61,17 @@ const Host = () => {
         <div>
 
         <section class="section">
+
+        <div className="card">
+        <div className="words">
+          <h3>constrast options:</h3>
+       </div>
+       <button id="theme-button">Dark Mode</button> 
+       
+       {/* <h3>Text Size:</h3> */}
+ 
+        
+      </div>
             
         </section>   
 
