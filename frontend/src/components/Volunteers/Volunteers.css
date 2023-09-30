@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: lightgrey;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .login-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .org-container {
+    display: flex;
+    
+  }
+  
+  /* Organization CSS */
+  .org-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .org-card h3 {
+    margin-top: 0;
+  }

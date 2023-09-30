@@ -32,8 +32,10 @@ app.get("/", (req, res) => {
 /* ---------------
  * EVENTS ROUTES
  * --------------- */
-// Gets all events
 app.get("/events", events.getAllEvents);
+app.post("/createEvent", events.createEvent);
+app.post("/cancelEvent", events.cancelEvent);
+app.post("/editEvent", events.editEvent);
 
 app.get("/users", userRoutes.getUsers);
 app.get("/users/:id", userRoutes.getUserByName);
