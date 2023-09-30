@@ -243,3 +243,20 @@
     .event-card-list > *{
       padding: 10px;
     }
+
+    @media (max-width: 768px) {
+      .event-card-list{
+        font-size: 10px;
+      }
+      .main-button-for-events{
+        font-size: 10px ;
+        white-space: nowrap;
+      }
+      .event-card-list > *{
+        padding: 5px;
+      }
+      .org-card{
+        height: 350px;
+      }
+    }
+
