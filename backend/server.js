@@ -33,10 +33,14 @@ app.get("/", (req, res) => {
  * EVENTS ROUTES
  * --------------- */
 app.get("/events", events.getAllEvents);
+app.get("/events/:id", events.getEventById);
 app.post("/createEvent", events.createEvent);
 app.post("/cancelEvent", events.cancelEvent);
 app.post("/editEvent", events.editEvent);
 
+/* ---------------
+ * USER ROUTES
+ * --------------- */
 app.get("/users", userRoutes.getUsers);
 app.get("/users/:id", userRoutes.getUserByName);
 app.post("/users/createUser", userRoutes.addUser);
