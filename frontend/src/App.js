@@ -9,19 +9,15 @@ import LoginForm from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 function App() {
   return (
+    <>
+    <SkipLink/>
     <Routes>
       <Route path="/" element={<Volunteers />}></Route>
       <Route path="/login" element={<LoginForm />}></Route>
       <Route path="/sign-up" element={<SignUp />}></Route>
     </Routes>
-    // <div className="app">
-    //   {/* <Routes>
-    //     <Route path="/" element={<Volunteers />} />
-    //   </Routes> */}
-    //   <Routes>
-    //     <Route path="/" element={<Volunteers />} />
-    //   </Routes>
-    // </div>
+    <Footer/>
+    </>
   );
 }
 
