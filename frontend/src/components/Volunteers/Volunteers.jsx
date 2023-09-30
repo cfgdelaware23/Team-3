@@ -22,9 +22,7 @@ const Volunteers = () => {
       <Nav />
       <div className="org-container">
         {organizations &&
-          organizations.map((org) => (
-            <Organ key={org.title} name={org.title} org={org} />
-          ))}
+          organizations.map((org) => <Organ key={org.title} org={org} />)}
       </div>
     </div>
   );
