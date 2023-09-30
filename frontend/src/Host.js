@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.png'
 import './Host.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,11 +20,6 @@ const Card = () => {
     );
   }
 
-  let themeButton = document.getElementById("theme-button");
-
-const DarkMode = () => {
-  document.body.classList.toggle("dark-mode");
-}
 
 
 function Footer() {
@@ -42,7 +37,21 @@ function Footer() {
         </footer>
     );
 }
+
+// const toggleDarkMode = () => {
+//     const body = document.body;
+//     body.classList.toggle('dark-mode');
+//   };
 const Host = () => {
+ 
+ const [isDarkmode, setDark] = useState(false)
+   const toggleDarkMode = () => {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    setDark(!isDarkmode)
+    console.log(isDarkmode)
+  };
+
     return (
         <>
         <div className="navbar">
@@ -60,15 +69,15 @@ const Host = () => {
         </div>
         <div>
 
-        <section class="section">
+        <section class="section" className={isDarkmode ? ".dark-mode" : ""}>
 
         <div className="card">
         <div className="words">
           <h3>constrast options:</h3>
        </div>
-       <button id="theme-button">Dark Mode</button> 
-       
-       {/* <h3>Text Size:</h3> */}
+       <button id="theme-button" onClick={toggleDarkMode}>Dark Mode</button>
+
+    
  
         
       </div>
@@ -84,7 +93,7 @@ const Host = () => {
 
              </section>
 
-             <section class="section">
+             <section class="section" className={isDarkmode ? ".dark-mode" : ".section"}>
 
                  <div className="card-container">
                 <Card />
@@ -101,7 +110,7 @@ const Host = () => {
                  <h1> Other Events</h1>
              </section>
             
-             <section class="section">
+             <section class="section" className={isDarkmode ? ".dark-mode" : ""}>
 
                 <div className="card-container">
                 <Card />
@@ -110,7 +119,7 @@ const Host = () => {
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" className={isDarkmode ? ".dark-mode" : ""}>
 
             </section>
      
