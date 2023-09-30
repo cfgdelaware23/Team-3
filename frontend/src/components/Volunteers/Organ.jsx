@@ -6,7 +6,7 @@ import SignUp from "../SignUp/SignUp";
 function Organ({ org }) {
   // const [loggedIn, setLoggedIn] = useState(false);
   console.log(JSON.parse(localStorage.getItem("currentUser")));
-
+  console.log(org)
   // useEffect(() => {
   //   if (JSON.parse(localStorage.getItem("currentUser"))) {
 
@@ -17,7 +17,13 @@ function Organ({ org }) {
     <div className="org-card">
       <h3>Title: {org.title}</h3>
       <h3>Description: {org.description}</h3>
-      <p>Categories: {org.catagories}</p>
+      <div className="category-container">
+      { org.categories.length > 0 && (
+        org.categories.map((category) => 
+          <div className="category-pill">{category}</div>
+        )
+      )}
+      </div>
       <p>Owner: {org.owner}</p>
 
       <li className="nav__contact--new">

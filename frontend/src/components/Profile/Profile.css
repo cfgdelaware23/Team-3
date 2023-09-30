@@ -83,14 +83,12 @@
     }
     
     .nav__contact {
-   
         list-style-type: none;
         cursor: not-allowed;
     }
 
     .nav__contact--new {
         list-style-type: none;
-
     }
 
     .nav__contact--textnew {
