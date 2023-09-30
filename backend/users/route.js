@@ -32,7 +32,15 @@ const getUserByName = async (req, res) => {
 };
 
 const addUser = async (req, res) => {
-  const { email, password, name } = req.body;
+  const {
+    email,
+    password,
+    name,
+    hours,
+    eventsAttending,
+    upcomingEvents,
+    attendingThisWeek,
+  } = req.body;
 
   // create user with hashed ps
 
@@ -53,6 +61,10 @@ const addUser = async (req, res) => {
     email,
     password: hashedPsssword,
     name,
+    hours,
+    eventsAttending,
+    upcomingEvents,
+    attendingThisWeek,
   });
 
   // comparing password

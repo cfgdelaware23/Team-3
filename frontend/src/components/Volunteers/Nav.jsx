@@ -1,19 +1,59 @@
-import React from 'react';
-import logo from './acblogo.png';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import logo from "./acblogo.png";
 
 const Nav = () => {
-    return (
-        <div className="navbar">
-            <img src={logo} alt="ACB Logo" className="logo" />
-            <div className="right__side">
-            <ul className="nav__tabs">
-                            <li className="nav__tab"><a className="nav__tab--anchor red" href="">John Doe</a></li>
-                            <li className="nav__tab"><a className="nav__tab--anchor black" href="">Profile</a></li>
-                            <li className="nav__contact"><a href="#" className="nav__contact--text">Log Out</a></li>
-                        </ul>
+  const [loggedIn, setLoggedIn] = useState(false);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log(currentUser);
+
+  useEffect(() => {
+    if (JSON.parse(localStorage.getItem("currentUser"))) {
+      setLoggedIn(true);
+    }
+  });
+  return (
+    <div className="navbar">
+      <img src={logo} alt="ACB Logo" className="logo" />
+      <div className="right__side">
+        <ul className="nav__tabs">
+          {loggedIn ? (
+            <div>
+              <button
+                className="nav__contact"
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
+                Log Out
+              </button>
             </div>
-        </div>
-    );
-}
+          ) : (
+            <div>
+              <Link
+                to="/login"
+                className="nav__contact"
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
+                Login
+              </Link>
+              <Link
+                to="/sign-up"
+                className="nav__contact"
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
+                Sign Up
+              </Link>
+            </div>
+          )}
+        </ul>
+      </div>
+    </div>
+  );
+};
 
 export default Nav;

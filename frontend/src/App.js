@@ -3,16 +3,24 @@ import "./App.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Volunteers from "./components/Volunteers/Volunteers";
-
+import { Routes, Route, Outlet, Link } from "react-router-dom";
+import LoginForm from "./components/Login/Login";
+import SignUp from "./components/SignUp/SignUp";
 function App() {
   return (
-    <>
-      <div className="App">
-        {/* <Navbar /> */}
-        <Volunteers />
-      </div>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<Volunteers />}></Route>
+      <Route path="/login" element={<LoginForm />}></Route>
+      <Route path="/sign-up" element={<SignUp />}></Route>
+    </Routes>
+    // <div className="app">
+    //   {/* <Routes>
+    //     <Route path="/" element={<Volunteers />} />
+    //   </Routes> */}
+    //   <Routes>
+    //     <Route path="/" element={<Volunteers />} />
+    //   </Routes>
+    // </div>
   );
 }
 

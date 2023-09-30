@@ -23,7 +23,7 @@ const Volunteers = () => {
       <div className="org-container">
         {organizations &&
           organizations.map((org) => (
-            <Organ key={org.title} name={org.title} />
+            <Organ key={org.title} name={org.title} org={org} />
           ))}
       </div>
     </div>
