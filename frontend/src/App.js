@@ -11,6 +11,7 @@ import ConfirmationPage from "./components/Confirmation/ConfirmationPage";
 import Profile from "./components/Profile/Profile";
 import HoursTable from "./components/Admin/Hours";
 import Nav from "./components/Volunteers/Nav";
+import Host from "./Host";
 function App() {
   return (
     <>
@@ -24,6 +25,7 @@ function App() {
         <Route path="/confirm-page/:id" element={<ConfirmationPage />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
         <Route path="/admin" element={<HoursTable />}></Route>
+        <Route path="/host" element={<Host/>  }></Route>
       </Routes>
       <Footer />
     </>

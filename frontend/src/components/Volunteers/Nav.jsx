@@ -18,11 +18,19 @@ const Nav = () => {
   });
   return (
     <div className="navbar">
-      <img src={logo} alt="ACB Logo" className="logo" />
+      <a href="/">
+        <img src={logo} alt="ACB Logo" className="logo" />
+      </a>
       <div className="right__side">
         <ul className="nav__tabs" role="tablist">
           {loggedIn ? (
             <div className="right__side">
+              <h1 style={{marginTop: 5, marginRight: 8}}>{currentUser.name}</h1>
+              { currentUser?.role === "admin" && (
+                <Link className="nav__contact" to="/host">
+                  Manage Events
+                </Link>
+              )}
               <Link className="nav__contact" to="/profile">
                 Profile
               </Link>

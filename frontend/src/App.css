@@ -1,4 +1,6 @@
 /* Navbar CSS DOUBLE CHECK LOGIN */
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -105,8 +107,6 @@
   color: lightgray;
   text-decoration: none;
   font-size: 18px;
-  
-
 }
 
 

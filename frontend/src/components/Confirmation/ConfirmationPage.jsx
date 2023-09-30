@@ -29,7 +29,7 @@ function ConfirmationPage() {
     console.log("UPDATED USER via con: ", data);
 
     localStorage.clear();
-    localStorage.setItem("currentUser", JSON.stringify(data));
+    localStorage.setItem("currentUser", JSON.stringify(data.user));
     console.log(localStorage.getItem("currentUser"));
   };
 

@@ -16,7 +16,7 @@ function Organ({ org }) {
   return (
     <div className="org-card">
       <h3>Title: {org.title}</h3>
-      <h3>Description: {org.description}</h3>
+      <h4>Description: {org.description}</h4>
       <div class="event-card-list">
       <div className="category-container">
       { org.categories.length > 0 && (
