@@ -85,12 +85,15 @@ const Host = () => {
 
                  <h1> Other Events</h1>
              </section>
-                 <section class="section">
-                 <Card />
+            
+             <section class="section">
 
-                 <Card />
-                 <Card />
-                 </section>
+                <div className="card-container">
+                <Card />
+                <Card />
+                <Card />
+                </div>
+            </section>
      
 
              <footer className="footer">
