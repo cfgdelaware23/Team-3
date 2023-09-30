@@ -54,14 +54,20 @@
     border-radius: 5px;
     cursor: pointer;
     justify-content: space-between;
-    margin-right: 300px;
+    margin-right: 30px;
   }
-  
- 
-    
 
   .add:hover {
     background-color: #0056b3;
+  }
+
+  .right__side {
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    flex-direction: row;
+    margin: 0 8px;
+
   }
   
 
