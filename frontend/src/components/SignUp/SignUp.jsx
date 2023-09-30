@@ -5,6 +5,7 @@ import './Signup.css';
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [hours, setHours] = useState("");
   const [eventsAttending, setEventsAttending] = useState("");
   const [upcomingEvents, setUpcomingEvents] = useState("");
@@ -14,6 +15,7 @@ function SignUp() {
   const userData = {
     email,
     password,
+    username,
     hours,
     eventsAttending,
     attendingThisWeek,
@@ -54,6 +56,19 @@ function SignUp() {
       <div className="signup__div">
 
       <form className="signup__form" onSubmit={handleSubmit}>
+        <div>
+          <label>Username:</label>
+          <input
+            type="username"
+            name="email"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              console.log();
+            }}
+            required
+          />
+        </div>
         <div>
           <label>Email:</label>
           <input
