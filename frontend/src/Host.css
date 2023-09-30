@@ -80,13 +80,11 @@
     display: flex;
     justify-content: space-between; /* Adjust alignment as needed */
     flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
+    margin: 0 8px;
   }
   
-  /* Style for the card */
-
   .card {
-    flex: 0 0 calc(30% - 16px); /* Adjust card width as needed with spacing */
-
+    width: 300px; /* Adjust card width as needed with spacing */
     border: 1px solid #ccc;
     border-radius: 4px;
     margin: 8px; /* Adjust spacing between cards */
@@ -94,6 +92,17 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
   }
+/* 
+  .card {
+    flex: 300px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 8px; 
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  } */
   
 
   
