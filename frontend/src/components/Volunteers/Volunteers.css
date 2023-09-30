@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: lightgrey;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .login-btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .org-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Organization CSS */
+  .org-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 33%;
+    height: 300px;
+  }
+  
+  .org-card h3 {
+    margin-top: 0;
+  }
+
+.nav__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+   
+    .nav__tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav__tab {
+        padding-left: 30px;
+        list-style-type: none;
+    }
+    
+    .nav__tab--anchor {
+        text-decoration: none;
+        font-weight: 600;
+        
+    }
+    
+    .nav__contact {
+   
+        list-style-type: none;
+        cursor: not-allowed;
+    }
+
+    .nav__contact--new {
+        list-style-type: none;
+
+    }
+
+    .nav__contact--textnew {
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+        border: 2px #171cbc;
+        border-radius: 20px;
+        background-color: #171cbc;
+        margin: 10px 80px;
+        padding: 20px 20px;
+        font-weight: 600;
+    }
+    
+    .nav__contact--text {
+        color: white;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: not-allowed;
+        border: 2px #171cbc;
+        border-radius: 20px;
+        background-color: #171cbc;
+        margin: 0 24px;
+        padding: 8px 20px;
+        font-weight: 600;
+    }
+    
+    .nav__contact--text:hover {
+        background-color: rgb(0, 0, 0);
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px 0 rgb(0 0 0 / 30%);
+        transition: all .35s ease;
+    }
+    
