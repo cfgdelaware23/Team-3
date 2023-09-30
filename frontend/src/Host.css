@@ -75,19 +75,18 @@
 
 
 
-/* Style for the card container using Flexbox */
 .card-container {
     display: flex;
-    justify-content: space-between; /* Adjust alignment as needed */
-    flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
+    justify-content: space-between; 
+    flex-wrap: wrap; 
     margin: 0 8px;
   }
   
   .card {
-    width: 300px; /* Adjust card width as needed with spacing */
+    width: 300px; 
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin: 8px; /* Adjust spacing between cards */
+    margin: 8px; 
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #fff;
