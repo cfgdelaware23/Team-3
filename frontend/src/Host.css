@@ -37,7 +37,9 @@
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-    justify-content: space-between;
+    margin-right: 10px;
+
+    
   }
   
   .btn:hover {
@@ -80,6 +82,7 @@
     justify-content: space-between; 
     flex-wrap: wrap; 
     margin: 0 8px;
+
   }
   
   .card {
@@ -101,6 +104,7 @@
     font-size: 1rem;
   }
   
+
 
 
 .text-footer {
