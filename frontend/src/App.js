@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Host from './Host'
+import Host from '../components/Host'
 
 function App() {
   return (
