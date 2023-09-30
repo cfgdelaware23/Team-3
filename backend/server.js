@@ -33,6 +33,7 @@ app.get("/", (req, res) => {
  * EVENTS ROUTES
  * --------------- */
 app.get("/events", events.getAllEvents);
+app.get("/events/:id", events.getEventById);
 app.post("/createEvent", events.createEvent);
 app.post("/cancelEvent", events.cancelEvent);
 app.post("/editEvent", events.editEvent);

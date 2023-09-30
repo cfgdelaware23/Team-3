@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router";
 
 function ConfirmationPage() {
@@ -9,26 +9,32 @@ function ConfirmationPage() {
   const { id } = useParams();
   console.log("confirmpage: ", id);
   const fetchEvent = async () => {
+    console.log("running?");
     const res = await fetch(`http://localhost:3001/events/${id}`);
     const data = await res.json();
     setPageData(data.result);
     console.log("data on page:", data.result);
   };
 
-  if (pageData === null) {
+  // if (pageData === null) {
+  //   fetchEvent();
+  // }
+  useEffect(() => {
     fetchEvent();
-  }
+  }, []);
 
-  if (pageData) {
-    return (
-      <div>
-        <h1>Event Title:{pageData.title}</h1>
-        Do you want you attend this event? blah blah blah
-      </div>
-    );
-  }
-
-  return <>Loading....</>;
+  return (
+    <>
+      {pageData ? (
+        <div>
+          <h1>Event Title:{pageData.title}</h1>
+          Do you want you attend this event? blah blah blah
+        </div>
+      ) : (
+        <div>nothing</div>
+      )}
+    </>
+  );
 }
 
 export default ConfirmationPage;
