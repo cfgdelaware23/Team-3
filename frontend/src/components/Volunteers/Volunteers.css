@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 * {
   font-family: 'Lato', sans-serif;
@@ -243,20 +245,41 @@
     .event-card-list > *{
       padding: 10px;
     }
-
-    @media (max-width: 768px) {
-      .event-card-list{
-        font-size: 10px;
-      }
-      .main-button-for-events{
-        font-size: 10px ;
-        white-space: nowrap;
-      }
-      .event-card-list > *{
-        padding: 5px;
-      }
-      .org-card{
-        height: 350px;
-      }
+    .org-card {
+      width: 50% !important;
     }
 
+
+@media screen and (max-width: 767px) {
+  /* Mobile Styles */
+  .org-card {
+    width: 50% !important;
+    max-width: 100%; /* Adjust the maximum width for mobile */
+  }
+
+  .nav__tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__tab {
+    padding-left: 0;
+  }
+
+  .nav__contact--textnew,
+  .nav__contact--text {
+    margin: 10px 0;
+  }
+
+
+  /* Add more styles specific to mobile */
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet Styles */
+  .org-card {
+    max-width: 50%; /* Adjust the maximum width for tablets */
+  }
+
+  /* Add more styles specific to tablets */
+}

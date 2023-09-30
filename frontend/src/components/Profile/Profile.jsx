@@ -1,18 +1,27 @@
-import React from 'react';
-import './Profile.css';
-import profilepic from './blankk.jpeg';
-import logo from '../Volunteers/acblogo.png';
+import React, { useState } from "react";
+import "./Profile.css";
+import profilepic from "./blankk.jpeg";
+import logo from "../Volunteers/acblogo.png";
 
 const Profile = () => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  console.log("Profile: ", currentUser);
+  console.log("ev: ", currentUser.events);
+
+  const fetchUser = async () => {
+    const res = await fetch("");
+  };
+
   return (
     <>
-      <div className="navbar">
+      {/* <div className="navbar">
         <img src={logo} alt="ACB Logo" className="logo" />
         <div className="right__side">
           <ul className="nav__tabs">
             <li className="nav__tab">
               <a className="nav__tab--anchor red" href="">
-                John Doe
+                {currentUser.name}
               </a>
             </li>
             <li className="nav__contact">
@@ -27,13 +36,17 @@ const Profile = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
       <div className="about-me__info--container">
         <figure className="about-me__picture--mask">
-          <img src={profilepic} className="about-me__picture" alt="Picture of Me!" />
+          <img
+            src={profilepic}
+            className="about-me__picture"
+            alt="Picture of Me!"
+          />
         </figure>
         <h1 className="about-me__info--title">
-          <span className="">JOHN DOE</span>&nbsp;<span className=""></span>
+          <span className="">{currentUser.name}</span>&nbsp;
         </h1>
         <div className="profile-table">
           <table>
@@ -49,59 +62,26 @@ const Profile = () => {
             </tr>
             <tr>
               <td>
-                <h3>20</h3>
+                <h3> {currentUser.attendingThisWeek}</h3>
               </td>
               <td>
-                <h3>20</h3>
+                <h3>{currentUser.eventsAttending}</h3>
               </td>
             </tr>
           </table>
           <div>
-            <h1 className='header__title'>My upcoming events:</h1>
+            <h1 className="header__title">My upcoming events:</h1>
           </div>
           <div className="events__profile">
-          <div className="events__profile">
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
+            <div className="events__profile">
+              {currentUser.user &&
+                currentUser.user.events.map((item) => (
+                  <div key={item.id} className="cardnew">
+                    <h1 className="h1_new">Event Name: {item.title}</h1>
+                    <p>{item.description}</p>
+                  </div>
+                ))}
             </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            </div>
-            <div className="cardnew"><h1 className="h1_new">Event Name:</h1
-            >
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis maiores blanditiis sit mollitia. Obcaecati magni veritatis nihil iusto fugiat, illo eligendi sit assumenda esse voluptatem ut quis officia! Nemo necessitatibus repudiandae rerum, quasi voluptate quis quae dolor ab ad iure corrupti error. Quas officiis porro asperiores reprehenderit, veniam quisquam omnis?</p>
-            0</div>
-          </div>
           </div>
         </div>
       </div>
@@ -110,4 +90,3 @@ const Profile = () => {
 };
 
 export default Profile;
-

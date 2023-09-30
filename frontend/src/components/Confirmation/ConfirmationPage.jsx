@@ -4,6 +4,8 @@ import './ConfirmationPage.css';
 
 function ConfirmationPage() {
   const [pageData, setPageData] = useState(null);
+  const [updatedUser, setUpdatedUSer] = useState(null);
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
   const navigate = useNavigate();
 
@@ -19,8 +21,19 @@ function ConfirmationPage() {
     console.log("data on page:", data.result);
   };
 
+  const fetchUpdatedUser = async () => {
+    const id = user._id;
+    const res = await fetch(`http://localhost:3001/users/${id}`);
+    const data = await res.json();
+
+    console.log("UPDATED USER via con: ", data);
+
+    localStorage.clear();
+    localStorage.setItem("currentUser", JSON.stringify(data));
+    console.log(localStorage.getItem("currentUser"));
+  };
+
   const addToEventsList = async () => {
-    const user = JSON.parse(localStorage.getItem("currentUser"));
     const eventData = {
       pageData,
       user,
@@ -34,7 +47,8 @@ function ConfirmationPage() {
       },
       body: JSON.stringify(eventData),
     });
-    const data = await res.json();
+
+    fetchUpdatedUser();
   };
 
   useEffect(() => {
@@ -55,6 +69,8 @@ function ConfirmationPage() {
               className="yes"
               onClick={() => {
                 addToEventsList();
+                alert("Added Succesfully, click OK to redirect");
+                navigate("/");
               }}
             >
               Yes
@@ -62,6 +78,8 @@ function ConfirmationPage() {
             <button
               className="no"
               onClick={() => {
+                alert("Canceled, click Ok to redirect");
+
                 navigate("/");
               }}
             >
