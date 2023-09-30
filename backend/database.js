@@ -13,8 +13,6 @@ const connect = async () => {
   }
 };
 
-
-
 const getDB = async () => {
   if (!MongoConnection) {
     await connect();
