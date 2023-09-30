@@ -1,5 +1,8 @@
+// Login.jsx
+
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
+import "./Login.css";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -11,21 +14,17 @@ function LoginForm() {
     password,
   };
 
-  // method: 'POST',          // HTTP request method
-  // headers,                 // Headers for the request
-  // body: JSON.stringify(data), // Convert the data to a JSON string
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       console.log("Fill out entire form");
     }
     const res = await fetch("http://localhost:3001/users/signin", {
-      method: "POST", // HTTP request method
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-      }, // Headers for the request
-      body: JSON.stringify(userData), // Convert the data to a JSON string
+      },
+      body: JSON.stringify(userData),
     });
     const data = await res.json();
     console.log(data.findByEmail);
@@ -33,14 +32,12 @@ function LoginForm() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     console.log("Current user: ", currentUser);
     navigate("/");
-
-    // You can perform further actions here, like sending the data to a server.
   };
 
   return (
-    <div>
+    <div className="login__container">
       <h1>Login Form</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="login__form" onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
           <input
