@@ -15,18 +15,18 @@ function Organ({ org }) {
 
   return (
     <div className="org-card">
-      <h3>{org.title}</h3>
-      <h3>{org.description}</h3>
-      <p>{org.catagories}</p>
-      <p>{org.owner}</p>
+      <h3>Title: {org.title}</h3>
+      <h3>Description: {org.description}</h3>
+      <p>Categories: {org.catagories}</p>
+      <p>Owner: {org.owner}</p>
 
       <li className="nav__contact--new">
         <Link
-          className="nav__contact"
+          className="nav__contact main-button-for-events"
           to={
             JSON.parse(localStorage.getItem("currentUser")) === null
               ? "/sign-up"
-              : "/"
+              : `/confirm-page/${org._id}`
           }
         >
           Attend Event
