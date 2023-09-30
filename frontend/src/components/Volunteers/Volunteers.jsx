@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Navbar';
-import OrganizationCard from './OrganizationCard';
-import Footer from './Footer';
-import Volunteers from './components/Volunteers/Volunteers';
+import './Volunteers.css';
+import Organ from './Organ';
+import Nav from './Nav';
+
 
 
 const dummyData = [
@@ -15,12 +13,11 @@ const dummyData = [
 
 ];
 
-
-function App() {
-    
+const Volunteers = () => {
+     
     const [organizations, setOrganizations] = useState(dummyData);
 
-    // NOTE: TRY FOR REAL DATA MAYBE???? DOUBLECHECK IF RIGHT
+    // NOTE: TRY FOR REAL DATA MAYBE???? DOUBLECHECK IF THIS IS RIGHT
     /*
     useEffect(() => {
         fetch('/organizations')
@@ -29,20 +26,17 @@ function App() {
             .catch(error => console.error("Error fetching organizations:", error));
     }, []); 
     */
+
     return (
-      <>
         <div className="App">
-            <Navbar />
+            <Nav />
             <div className="org-container">
                 {organizations.map(org => (
-                    <OrganizationCard key={org.id} name={org.name} description={org.description} />
+                    <Organ key={org.id} name={org.name} description={org.description} />
                 ))}
             </div>
-            
         </div>
-        <Footer />
-        </>
     );
 }
 
-export default App;
+export default Volunteers;
