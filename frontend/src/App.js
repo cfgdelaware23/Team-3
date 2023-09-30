@@ -28,7 +28,6 @@ function App() {
             .catch(error => console.error("Error fetching organizations:", error));
     }, []); 
     */
-
     return (
       <>
         <div className="App">
