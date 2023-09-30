@@ -45,5 +45,6 @@ app.get("/users", userRoutes.getUsers);
 app.get("/users/:id", userRoutes.getUserByName);
 app.post("/users/createUser", userRoutes.addUser);
 app.post("/users/signin", userRoutes.signInUser);
+app.post("/users/add-event", userRoutes.insertEvent);
 
 module.exports = app;

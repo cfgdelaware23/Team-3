@@ -34,13 +34,13 @@ const Nav = () => {
               </button>
             </div>
           ) : (
-            <div className="nav__links--new">
-              <Link to="/login" className="nav__contact" role="tab">
+            <div className="introNavButton">
+              <Link to="/login" className="nav__contact nav_button" role="tab">
                 Login
               </Link>
               <Link
                 to="/sign-up"
-                className="nav__contact"
+                className="nav__contact nav_button"
                 onClick={() => {
                   localStorage.clear();
                 }}
