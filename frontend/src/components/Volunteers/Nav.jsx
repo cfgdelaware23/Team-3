@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "./acblogo.png";
+import { useNavigate, useHistory } from "react-router-dom";
 
 const Nav = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const navigate = useNavigate();
   console.log(currentUser);
 
   useEffect(() => {
@@ -23,6 +25,7 @@ const Nav = () => {
                 className="nav__contact"
                 onClick={() => {
                   localStorage.clear();
+                  window.location.reload();
                 }}
               >
                 Log Out
@@ -30,13 +33,7 @@ const Nav = () => {
             </div>
           ) : (
             <div>
-              <Link
-                to="/login"
-                className="nav__contact"
-                onClick={() => {
-                  localStorage.clear();
-                }}
-              >
+              <Link to="/login" className="nav__contact">
                 Login
               </Link>
               <Link
