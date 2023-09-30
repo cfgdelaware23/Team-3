@@ -245,11 +245,15 @@
     .event-card-list > *{
       padding: 10px;
     }
+    .org-card {
+      width: 50% !important;
+    }
 
 
 @media screen and (max-width: 767px) {
   /* Mobile Styles */
   .org-card {
+    width: 50% !important;
     max-width: 100%; /* Adjust the maximum width for mobile */
   }
 
@@ -266,6 +270,7 @@
   .nav__contact--text {
     margin: 10px 0;
   }
+
 
   /* Add more styles specific to mobile */
 }
