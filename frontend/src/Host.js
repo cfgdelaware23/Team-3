@@ -6,7 +6,6 @@ import './Host.css'
 const Card = () => {
     return (
       <div className="card">
-        <img src="https://example.com/card-image.jpg" alt="Card Image" />
         <div className="card-body">
           <h2 className="card-title">Event</h2>
           <p className="card-text">Description of Event</p>
@@ -19,26 +18,47 @@ const Card = () => {
     );
   }
 
+  const toggleDarkMode = () => {
+    document.body.classList.toggle("dark-mode");
+  }
+
+const Access = () => {
+    return (
+        <div className="box">
+       <h3>constant</h3>
+       <h3>options:</h3>
+       <button id="theme-button">Toggle Dark Mode</button>
+       
+       <h3>Text Size:</h3>
+ 
+        </div>
+        
+  
+    );
+        
+    
+}
 const Host = () => {
     return (
         <>
         <div className="navbar">
             <img src={logo} alt="ACB Logo" className="logo" />
             <div className="right__side">
-                  <section class="section">
                  <button class="add">Add Event</button>
 
-             </section>
 
             
-            <h2 className='user__name'>John Doe</h2>    
+                <h2 className='user__name'>John Doe</h2>    
             
             </div>
 
 
         </div>
         <div>
+
+        <section class="section">
             
+        </section>   
 
            
 

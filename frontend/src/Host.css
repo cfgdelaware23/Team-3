@@ -18,6 +18,18 @@
     height: 50px;
   }
   
+  .dark-mode {
+    background-color: black;
+    color:white;
+    
+    }
+    
+    #theme-button {
+      border-color: white;
+      border: dotted;
+      border-width: thick;
+    }
+    
   .btn {
     padding: 8px 16px;
     border: none;
