@@ -1,4 +1,5 @@
 const bcrypt = require("bcrypt");
+const { ObjectId } = require("mongodb");
 const { getDB } = require("../database");
 
 const getUsers = async (req, res) => {
@@ -8,6 +9,27 @@ const getUsers = async (req, res) => {
     const users = await db.collection("Users").find().toArray();
     console.log(users);
     res.json({ users });
+  } catch (error) {
+    console.log(error);
+    res.json(error);
+  }
+};
+const insertEvent = async (req, res) => {
+  console.log("inserting Event ");
+  const { pageData, user } = req.body;
+  console.log("from route: ", pageData, user);
+  // console.log("events: ", event);
+  const db = await getDB();
+  console.log("LLLL: ", user._id);
+  try {
+    const updatedUser = await db
+      .collection("Users")
+      .updateOne(
+        { _id: new ObjectId(user._id) },
+        { $push: { events: pageData } }
+      );
+    console.log(updatedUser);
+    res.json({ message: "Added to events field", updatedUser });
   } catch (error) {
     console.log(error);
     res.json(error);
@@ -40,6 +62,7 @@ const addUser = async (req, res) => {
     eventsAttending,
     upcomingEvents,
     attendingThisWeek,
+    insertEvent,
   } = req.body;
 
   // create user with hashed ps
@@ -112,6 +135,7 @@ const userRoutes = {
   addUser,
   getUserByName,
   signInUser,
+  insertEvent,
 };
 
 module.exports = userRoutes;
