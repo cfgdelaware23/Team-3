@@ -3,8 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import Navbar from './Navbar';
 import OrganizationCard from './OrganizationCard';
+import Footer from './Footer';
 
-// Dummy data array
+
+
 const dummyData = [
     { id: 1, name: "Organization 1", description: "Description for Organization 1" },
     { id: 2, name: "Organization 2", description: "Description for Organization 2" },
@@ -17,7 +19,7 @@ function App() {
     
     const [organizations, setOrganizations] = useState(dummyData);
 
-    // NOTE: TRY FOR REAL DATA MAYBE???? DOUBLECHECK IF THIS IS RIGHT
+    // NOTE: TRY FOR REAL DATA MAYBE???? DOUBLECHECK IF RIGHT
     /*
     useEffect(() => {
         fetch('/organizations')
@@ -28,6 +30,7 @@ function App() {
     */
 
     return (
+      <>
         <div className="App">
             <Navbar />
             <div className="org-container">
@@ -35,7 +38,10 @@ function App() {
                     <OrganizationCard key={org.id} name={org.name} description={org.description} />
                 ))}
             </div>
+            
         </div>
+        <Footer />
+        </>
     );
 }
 
