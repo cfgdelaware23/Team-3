@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useHistory } from "react-router";
+import './Signup.css';
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -47,8 +48,12 @@ function SignUp() {
 
   return (
     <div>
-      <h1>Sign up Form</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="signup_header">
+        <h1 className="">Sign up Form</h1>
+      </div>
+      <div className="signup__div">
+
+      <form className="signup__form" onSubmit={handleSubmit}>
         <div>
           <label>Email:</label>
           <input
@@ -123,6 +128,7 @@ function SignUp() {
         </div>
         <button type="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
 }
