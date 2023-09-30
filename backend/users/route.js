@@ -29,7 +29,7 @@ const insertEvent = async (req, res) => {
         { $push: { events: pageData } }
       );
     console.log(updatedUser);
-    res.json({ message: "Added to events field", updatedUser });
+    res.json({ updatedUser });
   } catch (error) {
     console.log(error);
     res.json(error);
@@ -40,12 +40,14 @@ const getUserByName = async (req, res) => {
   console.log("fetching single user");
   try {
     const id = req.params.id;
-    console.log(id);
+    console.log("d: ", id);
 
     const db = await getDB();
 
-    const user = await db.collection("Users").find({ name: id }).toArray();
-    console.log(user);
+    const user = await db
+      .collection("Users")
+      .findOne({ _id: new ObjectId(id) });
+    console.log("usa: ", user);
     res.json({ user });
   } catch (error) {
     console.log(error);
@@ -63,6 +65,7 @@ const addUser = async (req, res) => {
     upcomingEvents,
     attendingThisWeek,
     insertEvent,
+    events,
   } = req.body;
 
   // create user with hashed ps
@@ -88,6 +91,8 @@ const addUser = async (req, res) => {
     eventsAttending,
     upcomingEvents,
     attendingThisWeek,
+    insertEvent,
+    events,
   });
 
   // comparing password

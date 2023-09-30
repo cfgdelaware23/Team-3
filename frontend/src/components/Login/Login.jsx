@@ -27,7 +27,8 @@ function LoginForm() {
       body: JSON.stringify(userData),
     });
     const data = await res.json();
-    console.log(data.findByEmail);
+    console.log("data zz: ", data);
+    console.log("before: ", data.findByEmail);
     localStorage.setItem("currentUser", JSON.stringify(data.findByEmail));
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     console.log("Current user: ", currentUser);

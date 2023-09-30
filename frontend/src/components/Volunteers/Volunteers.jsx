@@ -19,7 +19,7 @@ const Volunteers = () => {
   console.log(organizations);
   return (
     <div className="App">
-      <Nav />
+      {/* <Nav /> */}
       <div className="org-container">
         {organizations &&
           organizations.map((org) => <Organ key={org.title} org={org} />)}
