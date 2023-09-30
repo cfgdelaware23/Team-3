@@ -15,10 +15,11 @@ const Nav = () => {
     }
   });
   return (
+    
     <div className="navbar">
       <img src={logo} alt="ACB Logo" className="logo" />
       <div className="right__side">
-        <ul className="nav__tabs">
+        <ul className="nav__tabs" role="tablist">
           {loggedIn ? (
             <div>
               <button
@@ -27,13 +28,13 @@ const Nav = () => {
                   localStorage.clear();
                   window.location.reload();
                 }}
-              >
+                role="tab">
                 Log Out
               </button>
             </div>
           ) : (
             <div>
-              <Link to="/login" className="nav__contact">
+              <Link to="/login" className="nav__contact" role="tab">
                 Login
               </Link>
               <Link
@@ -42,7 +43,7 @@ const Nav = () => {
                 onClick={() => {
                   localStorage.clear();
                 }}
-              >
+                role="tab">
                 Sign Up
               </Link>
             </div>
